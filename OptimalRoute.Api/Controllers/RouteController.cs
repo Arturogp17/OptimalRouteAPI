@@ -19,17 +19,19 @@ namespace OptimalRoute.Api.Controllers
         public IActionResult GetOptimalRoute([FromBody] RouteRequest request)
         {
             var roadsTuple = request.Roads
-                .Select(r => (r.From, r.To, r.Time))
-                .ToList();
+        .Select(r => (r.From, r.To, r.Time))
+        .ToList();
 
-            var result = _routeService.CalculateShortestRoute(
+            // Llamar al servicio y obtener tanto la ruta como el tiempo total
+            var (route, totalTime) = _routeService.CalculateShortestRoute(
                 request.Cities,
                 roadsTuple,
                 request.Origin,
                 request.Destination
             );
 
-            return Ok(new { route = result });
+            // Devolver la ruta y el tiempo total
+            return Ok(new { route, totalTime });
         }
     }
 }

@@ -8,6 +8,6 @@ namespace OptimalRoute.Aplication.Interfaces
 {
     public interface IRouteService
     {
-        List<string> CalculateShortestRoute(List<string> cities, List<(string from, string to, int time)> roads, string origin, string destination);
+        public (List<string> route, int totalTime) CalculateShortestRoute(List<string> cities, List<(string from, string to, int time)> roads, string origin, string destination);
     }
 }
