@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OptimalRoute.Domain\OptimalRoute.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

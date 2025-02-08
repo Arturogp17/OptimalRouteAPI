@@ -1,9 +1,45 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptimalRoute.Api", "OptimalRoute.Api\OptimalRoute.Api.csproj", "{6AB54B6E-248B-4350-B176-6FBC6BD83DE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptimalRoute.Aplication", "OptimalRoute.Aplication\OptimalRoute.Aplication.csproj", "{F62858DF-5D3A-4F3C-B484-2594A9E88D0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptimalRoute.Domain", "OptimalRoute.Domain\OptimalRoute.Domain.csproj", "{70DCD56F-32B2-4266-A047-AE2DB18B2FA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptimalRoute.Infrastructure", "OptimalRoute.Infraestructure\OptimalRoute.Infrastructure.csproj", "{211C005C-473F-4593-8DAC-A55316A0B61D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptimalRoute.Tests", "OptimalRoute.Tests\OptimalRoute.Tests.csproj", "{8F36AB8E-DAE2-4A24-8955-AC2DDC679369}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AB54B6E-248B-4350-B176-6FBC6BD83DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB54B6E-248B-4350-B176-6FBC6BD83DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB54B6E-248B-4350-B176-6FBC6BD83DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB54B6E-248B-4350-B176-6FBC6BD83DE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F62858DF-5D3A-4F3C-B484-2594A9E88D0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F62858DF-5D3A-4F3C-B484-2594A9E88D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F62858DF-5D3A-4F3C-B484-2594A9E88D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F62858DF-5D3A-4F3C-B484-2594A9E88D0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70DCD56F-32B2-4266-A047-AE2DB18B2FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70DCD56F-32B2-4266-A047-AE2DB18B2FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70DCD56F-32B2-4266-A047-AE2DB18B2FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70DCD56F-32B2-4266-A047-AE2DB18B2FA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{211C005C-473F-4593-8DAC-A55316A0B61D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{211C005C-473F-4593-8DAC-A55316A0B61D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{211C005C-473F-4593-8DAC-A55316A0B61D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{211C005C-473F-4593-8DAC-A55316A0B61D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F36AB8E-DAE2-4A24-8955-AC2DDC679369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F36AB8E-DAE2-4A24-8955-AC2DDC679369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F36AB8E-DAE2-4A24-8955-AC2DDC679369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F36AB8E-DAE2-4A24-8955-AC2DDC679369}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
