@@ -18,20 +18,55 @@ namespace OptimalRoute.Api.Controllers
         [HttpPost("optimal-route")]
         public IActionResult GetOptimalRoute([FromBody] RouteRequest request)
         {
-            var roadsTuple = request.Roads
-        .Select(r => (r.From, r.To, r.Time))
-        .ToList();
+            try
+            {
+                if (request?.Cities == null || request.Roads == null ||
+                    string.IsNullOrEmpty(request.Origin) || string.IsNullOrEmpty(request.Destination) || request == null)
+                {
+                    return BadRequest(new
+                    {
+                        statusCode = 400,
+                        message = "Invalid request: Cities, roads, origin, and destination are required."
+                    });
+                }
+                var roadsTuple = request.Roads
+                    .Select(r => (r.From, r.To, r.Time))
+                    .ToList();
 
-            // Llamar al servicio y obtener tanto la ruta como el tiempo total
-            var (route, totalTime) = _routeService.CalculateShortestRoute(
-                request.Cities,
-                roadsTuple,
-                request.Origin,
-                request.Destination
-            );
+                // Llamar al servicio y obtener tanto la ruta como el tiempo total
+                var (route, totalTime) = _routeService.CalculateShortestRoute(
+                    request.Cities,
+                    roadsTuple,
+                    request.Origin,
+                    request.Destination
+                );
 
-            // Devolver la ruta y el tiempo total
-            return Ok(new { route, totalTime });
+                if (route.Count == 0)
+                {
+                    return NotFound(new
+                    {
+                        statusCode = 404,
+                        message = "No valid route found between the specified cities."
+                    });
+                }
+
+
+                return Ok(new
+                {
+                    route,
+                    totalTime
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    statusCode = 500,
+                    message = "An unexpected error occurred.",
+                    details = ex.Message // just for dev, delete on PROD
+                });
+            }
+            
         }
     }
 }
