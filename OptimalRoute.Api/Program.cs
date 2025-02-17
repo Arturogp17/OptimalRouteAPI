@@ -10,14 +10,27 @@ builder.Services.AddScoped<IRouteService, RouteService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "OptimalRoute API",
+        Version = "v1",
+        Description = "API to calculate optimal route between two cities"
+    });
+});
+
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "OptimalRoute API v1");
+        c.RoutePrefix = string.Empty;  
+    });
 }
 
 app.UseAuthorization();
